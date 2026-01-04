@@ -1,0 +1,32 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: miniflux
+  namespace: miniflux
+  labels:
+    app: miniflux
+  annotations:
+    # Traefik configuration
+    traefik.ingress.kubernetes.io/router.entrypoints: websecure
+    traefik.ingress.kubernetes.io/router.tls: "true"
+    # Optional: Force HTTPS redirect
+    traefik.ingress.kubernetes.io/redirect-entry-point: https
+    traefik.ingress.kubernetes.io/redirect-permanent: "true"
+    traefik.ingress.kubernetes.io/service.serversscheme: http
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+spec:
+  rules:
+  - host: rss.bytechance.dev
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: miniflux
+            port:
+              number: 80
+  tls:
+  - hosts:
+    - rss.bytechance.dev
+    secretName: miniflux-tls
