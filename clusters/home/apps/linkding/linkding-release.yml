@@ -6,8 +6,10 @@ metadata:
 spec:
   values:
     env:
-    LD_SUPERUSER_NAME: "admin"
-    LD_SUPERUSER_PASSWORD: "test"
+      - name: LD_SUPERUSER_NAME
+        value: "admin"
+      - name: LD_SUPERUSER_PASSWORD
+        value: "test"
     service:
       type: ClusterIP
       port: 80
