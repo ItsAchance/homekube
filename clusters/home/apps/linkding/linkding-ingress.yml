@@ -13,7 +13,7 @@ metadata:
 
 spec:
   rules:
-  - host: bookmark.bytechance.dev
+  - host: linkding.bytechance.dev
     http:
       paths:
       - path: /
@@ -25,5 +25,5 @@ spec:
               number: 80
   tls:
   - hosts:
-    - bookmark.bytechance.dev
+    - linkding.bytechance.dev
     secretName: linkding-tls
