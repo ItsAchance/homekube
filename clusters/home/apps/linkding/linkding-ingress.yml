@@ -22,7 +22,7 @@ spec:
           service:
             name: linkding
             port:
-              number: 80
+              number: 9090
   tls:
   - hosts:
     - linkding.bytechance.dev
