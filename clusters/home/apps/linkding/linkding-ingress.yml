@@ -20,7 +20,7 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: linkding
+            name: bookmark
             port:
               number: 80
   tls:
