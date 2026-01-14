@@ -1,0 +1,32 @@
+---
+# Longhorn Dashboard Ingress
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: linkding-ingress
+  namespace: linkding-system
+  annotations:
+    traefik.ingress.kubernetes.io/router.entrypoints: websecure
+    traefik.ingress.kubernetes.io/router.tls: "true"
+    # Optional: Add basic auth to protect the dashboard
+    # traefik.ingress.kubernetes.io/router.middlewares: linkding-system-auth@kubernetescrd
+    traefik.ingress.kubernetes.io/redirect-entry-point: https
+    traefik.ingress.kubernetes.io/redirect-permanent: "true"
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+
+spec:
+  rules:
+  - host: linkding.bytechance.dev
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: linkding-frontend
+            port:
+              number: 80
+  tls:
+  - hosts:
+    - linkding.bytechance.dev
+    secretName: linkding-tls
