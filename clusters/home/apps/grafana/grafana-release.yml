@@ -5,11 +5,8 @@ metadata:
   namespace: monitoring
 spec:
   values:
-    env:
-      - name: adminUser
-        value: "admin"
-      - name: adminPassword
-        value: "test"
+    adminUser: "admin"
+    adminPasword: "test"
     service:
       type: ClusterIP
       port: 3000
