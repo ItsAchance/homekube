@@ -6,7 +6,7 @@ metadata:
 spec:
   values:
     adminUser: "admin"
-    adminPasword: "test"
+    adminPasword: "test123"
     service:
       type: ClusterIP
       port: 3000
