@@ -3,4 +3,3 @@ kind: Kustomization
 resources:
 - kured-repo.yml
 - kured-release.yml
-
