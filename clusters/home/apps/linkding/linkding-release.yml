@@ -7,9 +7,15 @@ spec:
   values:
     env:
       - name: LD_SUPERUSER_NAME
-        value: "admin"
+        valueFrom:
+          secretKeyRef:
+            name: linkding-secrets
+            key: LD_SUPERUSER_NAME
       - name: LD_SUPERUSER_PASSWORD
-        value: "test"
+        valueFrom:
+          secretKeyRef:
+            name: linkding-secrets
+            key: LD_SUPERUSER_PASSWORD
     service:
       type: ClusterIP
       port: 80
