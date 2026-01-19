@@ -4,4 +4,4 @@ resources:
 - linkding-ingress.yml
 - linkding-repo.yml
 - linkding-release.yml
-
+- linkding-secret.yml
