@@ -1,32 +1,41 @@
-apiVersion: helm.toolkit.fluxcd.io/v2
-kind: HelmRelease
+apiVersion: ENC[AES256_GCM,data:EY6aEn5G926i16bJKO5GsvVdsE46mNcR+g==,iv:CD+Z1AlvIotMSGsIION7mqmPDwV9lmIzjpzq8OXiv80=,tag:IsCGmPTtcvxA/AfWcS388w==,type:str]
+kind: ENC[AES256_GCM,data:nVpakf5Pnws3QME=,iv:p9l+DzU+RkldiT2vEJKqv9Y5Yj4yevVIjgJNjcnNTmY=,tag:V4EQz9yvQkSRtlU7DyDQ8w==,type:str]
 metadata:
-  name: linkding
-  namespace: linkding
+    name: ENC[AES256_GCM,data:KqzGeMIRe9w=,iv:wObN/6afqetgNba76vR782M2NbBAqtXUZDKTcUPh1d0=,tag:ZZHDKH8aBAgC1Z3wyPsvog==,type:str]
+    namespace: ENC[AES256_GCM,data:7jVIPNodO4Y=,iv:rdTnTfluiH8H1FCiTKmBvT8iCQj8jXwaq5M4IZtVWX0=,tag:HeVNPjG6UiwtoXMoPC4hBQ==,type:str]
 spec:
-  values:
-    env:
-      - name: LD_SUPERUSER_NAME
-        valueFrom:
-          secretKeyRef:
-            name: linkding-secrets
-            key: LD_SUPERUSER_NAME
-      - name: LD_SUPERUSER_PASSWORD
-        valueFrom:
-          secretKeyRef:
-            name: linkding-secrets
-            key: LD_SUPERUSER_PASSWORD
-    service:
-      type: ClusterIP
-      port: 80
-  interval: 30m
-  chart:
-    spec:
-      chart: linkding
-      version: '*'
-      sourceRef:
-        kind: HelmRepository
-        name: linkding-repo
-        namespace: flux-system
-  install:
-    createNamespace: true
+    values:
+        env:
+            - name: ENC[AES256_GCM,data:5ovCO8GJnGoH2zUDJLBgkJo=,iv:WcuYTRqSdahOr3BL+rX5+PM/mohL0vb/3h+MG6GFOZo=,tag:7gIcPP/gUdrqbXTabcN0DA==,type:str]
+              value: ENC[AES256_GCM,data:F2AHmqEtjg==,iv:UtK7oEYcHekNWQWLnknG3HttrfCA137dHEiotsg/UkQ=,tag:Ch5tLA8P6r06LRE1uHiKEA==,type:str]
+            - name: ENC[AES256_GCM,data:IZMr76qfNT00ElHGADDluk6FF+Yy,iv:TNU8fvL29Gt4KMdGxdmzxPOm9BP7INhQggdHRBw0FfQ=,tag:nCfWoCtrSB4/LkXeE9Suqg==,type:str]
+              value: ENC[AES256_GCM,data:sGGbZMNKQoSNQ7OuL/eirg==,iv:wdszzyUzXGQsJxsNUAPS2oCDG9GdLTvV710iSZ0zl58=,tag:NDS4gNt2JijcKyKIeXtQWg==,type:str]
+        service:
+            type: ENC[AES256_GCM,data:VW+/nY0OyMPJ,iv:5ia0d0OmIlXbSm5qZGfj64LpbHnXv1v+VtqHKFYIye4=,tag:KPWGf4p/tKEyF78x3yv3GA==,type:str]
+            port: ENC[AES256_GCM,data:6yM=,iv:HmPy4+DW3QEL5FNrI/t9zOC21dwMA8uNIJ+wgRs1B4s=,tag:fXqXluOGnrhOdak9XbqL+Q==,type:int]
+    interval: ENC[AES256_GCM,data:JTFr,iv:qGyr23b35SdR7YP4pQmfA1UTpLPlNfibsAAC0B0w//Y=,tag:EKgXc+z6Dl8Xdge0vH9tcA==,type:str]
+    chart:
+        spec:
+            chart: ENC[AES256_GCM,data:sgcx0auEdpU=,iv:hInNSay5ozQlw3oElMZtiv3F8fRKPz7eV9koEQjEDyI=,tag:juYv619SpExSGa8VL1o7Fw==,type:str]
+            version: ENC[AES256_GCM,data:DA==,iv:VPI1yPneUmvLjsVllYQ1nFFZT0YDJa/wuUOOnqlEYDo=,tag:kluIsigyjPqbg52X943ilw==,type:str]
+            sourceRef:
+                kind: ENC[AES256_GCM,data:rDDMgKpWe/zJ+ImWDJQ=,iv:rhnsbGn0Y/TRjJW/irRWG5FCEbVF3HeejqVXzXBOpFs=,tag:4TNn8myZY0xovGH9qtLkPw==,type:str]
+                name: ENC[AES256_GCM,data:EXT6KoFcPKU7AN1faQ==,iv:mrYxDLjVtN3zZokfrIG62Mes8h0UCGoZxNaoOAY1Bmo=,tag:JBAYBdiOKGziTeT+3CqhHA==,type:str]
+                namespace: ENC[AES256_GCM,data:bb7kTFn5d09J0HE=,iv:zzubUgLM01n3r4dWLiD3zhZilSVIvYXCnhk0hCv1UFI=,tag:kHxa2e+ajTNFkFleG2vKDA==,type:str]
+    install:
+        createNamespace: ENC[AES256_GCM,data:GJT7MQ==,iv:TiS3HgipgPTbCLjjHCQy3uYTkpv6A6ZSAq+Z/0UsFsU=,tag:NePAuBe7UahFzPzj/cPrkg==,type:bool]
+sops:
+    age:
+        - recipient: age1nlksa9qs0erkyycx0kcttfqk0lt4yhcxnmww0su08ftppy442vpqlr8pnn
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSA2RHRNdHorWElDM2lzc3lh
+            ZllnU1Y2Y2NUdG8vdnVVcGRCWjB4MUdaQlJVCnJtaDZKdlhid0UxS1NiMTExODlv
+            ODBzT1EyblJjQllhTjdYU0UvdG1ZSVUKLS0tIFVKdDBWM3UyaXNHdmJ5ZWZCS25v
+            UHhNWjNkN29zWXdBWVFJQVFzd2dXdUkK8B/Ts/JHk37CK2mkyAQvLbGVzE4s0q5X
+            wRGFw52JcAL8MzyjJcoab3dxvoOooARJOGh8IvIG8eD93KggcECa2w==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2026-01-19T20:20:02Z"
+    mac: ENC[AES256_GCM,data:gyr9LX3ICMACwrep0YmN2YxNJ6q8lsTGa93Y0WhOivO+cqPFK2tjL+f5QHFDXBM3jsUDi3zZfH6Dyeox0zxbNhUPWBBFZk8wUisXSh4nGkMIP/ZXfu0jDtRhwKgzLm2SmVEmJibpGE4pD/sOBQdWo2FuAKr9W/kSpTFm/LMoniw=,iv:fiW11jzGxkAb1WxJOQS+nqTHnxNdPldEFkzZWsfxK3Y=,tag:wIeQgS2TkrGa7OEYzsTB8g==,type:str]
+    unencrypted_suffix: _unencrypted
+    version: 3.11.0
