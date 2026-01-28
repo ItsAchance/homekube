@@ -4476,6 +4476,7 @@ spec:
     spec:
     - args
       containers:
+      - args:
         - --events-addr=http://notification-controller.$(RUNTIME_NAMESPACE).svc.cluster.local./
         - --watch-all-namespaces=true
         - --log-level=info
@@ -4484,8 +4485,6 @@ spec:
         - --storage-path=/data
         - --storage-adv-addr=source-controller.$(RUNTIME_NAMESPACE).svc.cluster.local.
         env:
-        - name: DISABLE_HTTP2
-          value: "1"
         - name: RUNTIME_NAMESPACE
           valueFrom:
             fieldRef:
