@@ -7,5 +7,5 @@ metadata:
 data:
   config.json: |-
     {
-      "repositories": ["ItsAchance/homekube", "ItsAchance/container-apps"]
+      "repositories": ["itsachance/homekube", "itsachance/container-apps", "itsachance/magic8ball-api"]
     }
