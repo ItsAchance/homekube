@@ -19,7 +19,7 @@ spec:
         fsGroup: 65534
       initContainers:
         - name: db-migration
-          image: ghcr.io/itsachance/3an-builder:latest
+          image: ghcr.io/itsachance/trean-builder:latest
           command:
             - /go/bin/goose
           args:
