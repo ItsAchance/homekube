@@ -7,3 +7,4 @@ resources:
   - trean-db-secret.yml
   - trean-ingress.yml
   - trean-service.yml
+  - trean-pvc.yml
