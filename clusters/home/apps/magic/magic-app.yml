@@ -28,4 +28,4 @@ spec:
           limits:
             memory: "256Mi"
             cpu: "200m"
-        imagePullPolicy: Always
+        imagePullPolicy: IfNotPresent
