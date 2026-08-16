@@ -1,0 +1,71 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: mc-java
+  labels:
+    app: mc-java
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: minecraft-pvc
+  namespace: mc-java
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: "longhorn"
+  resources:
+    requests:
+      storage: 1Gi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mc-java
+  namespace: mc-java
+  labels:
+    app: mc-java
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mc-java
+  template:
+    metadata:
+      labels:
+        app: mc-java
+    spec:
+      containers:
+        - name: mc-java
+          image: itzg/minecraft-server
+          imagePullPolicy: IfNotPresent
+          resources:
+            requests:
+              cpu: 500m
+              memory: 1Gi
+          env:
+            - name: EULA
+              value: "TRUE"
+          volumeMounts:
+            - name: data
+              mountPath: /data
+      volumes:
+        - name: data
+          persistentVolumeClaim:
+            claimName: minecraft-pvc
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mc-java
+  namespace: mc-java
+  labels:
+    app: mc-java
+spec:
+  type: LoadBalancer
+  selector:
+    app: mc-java
+  ports:
+    - port: 25565
+      protocol: TCP
+      targetPort: 25565
