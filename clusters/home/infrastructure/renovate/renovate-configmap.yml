@@ -7,5 +7,7 @@ metadata:
 data:
   config.json: |-
     {
-      "repositories": ["itsachance/homekube", "itsachance/container-apps", "itsachance/magic8ball-api", "itsachance/3an"]
+      "endpoint": "https://codeberg.org/api/v1",
+      "onboarding": false,
+      "repositories": ["achance/homekube", "achance/container-apps", "achance/magic8ball-api", "achance/trean"]
     }
